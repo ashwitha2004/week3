@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: 500px;
+
+        }
+        table tr td{
+            padding: 6px;
+            padding-bottom: 6px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<script>
+    function validate(){
+        let p1=frm.pwd.value;
+    let p2=p1.length;
+    if(p2<8){
+        alert("password should not exceed 8 digits");
+        return false;
+    }
+    }
+        </script>
+<body>
+        
+        <center>
+            <h2>login form</h2>
+            <form name="frm" method="post" action="abc.html" onsubmit="return validate()"></form>
+            <fieldset>
+                <table>
+                    <tr><td>User Name:</td><td><input type="text" name="uname" value="" required/></td></tr>
+                    <tr><td>Password:</td><td><input type="password" name="pwd" value="" required/></td></tr>
+                    
+                        
+                    </table>
+
+                
+            </fieldset>
+            <table>
+                <input type="submit" value="login" name="submit"/>
+            </table>
+        </form>
+    </center>
+
+    
+</body>
+</html>

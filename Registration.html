@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: 500px;
+
+        }
+        table tr td{
+            padding: 6px;
+            padding-bottom: 6px;
+        }
+    </style>
+</head>
+<script>
+    function validate(){
+        let fn=frm.fname.value;
+        for(let x in fn){
+            ch=fn.charCodeAt(x);
+            if(ch<65||ch>90 && ch<97||ch>122){
+                alert("Invalid firstname");
+                return false;
+            }
+        }
+        let fn1=frm.fname.value;
+        for(let x in fn1){
+            ch=fn.charCodeAt(x);
+            if(ch<65||ch>90 && ch<97||ch>122){
+                alert("Invalid lastname");
+                return false;
+            }
+    }
+    let phn=frm.phone.value;
+    let len=phn.length;
+    if(len!==10){
+        alert("phone no. should contain 10 digits");
+        return false;
+    }
+    let reg="@";
+    let mail=frm.email.value;
+    if(reg.test(mail)){
+        alert("invalid mail");
+        return false;
+    }
+    let p1=frm.pwd.value;
+    let p2=p1.length;
+    if(p2<8){
+        alert("password should not exceed 8 digits");
+        return false;
+    }
+    return true;
+}
+</script>
+<body style="background-color:hsl(180, 100%, 50%)">
+    <center>
+        <h2>Registration</h2>
+        <form name="frm" method="post" action="success.html" onsubmit="return validate()">
+<fieldset>
+    <table>
+        <tr><td>First Name:</td><td><input type="text" name="fname" value="" required/></td></tr>
+        <tr><td>Last Name:</td><td><input type="text" name="lname" value="" required/></td></tr>
+        <tr><td>Phone Number:</td><td><input type="number" name="phone" value="" required/></td></tr>
+        <tr><td>Date of Birth:</td><td><input type="date" name="date" value="" required/></td></tr>
+        
+        <tr><td>Mail Id:</td><td><input type="text" name="email" value="" required/></td></tr>
+        <tr><td>User Name:</td><td><input type="text" name="uname" value="" required/></td></tr>
+        <tr><td>Password:</td><td><input type="password" name="pwd" value="" required/></td></tr>
+        <tr><td>Age:</td><td><input type="number" name="lname" value="" required/></td></tr>
+        <tr><td>Gender</td>
+            <td>Male:<input type="radio" name="gender" value="male"/></td>
+            <td>Female:<input type="radio" name="gender" value="Female"/></td></tr>
+       <!--<button type="submit">submit</button>-->
+        
+
+    </table>
+
+    
+</fieldset>
+<table>
+    <input type="submit" value="Registration" name="submit"/>
+</table>
+
+    </center>
+
+        </form>
+        
+</body>
+</html>
